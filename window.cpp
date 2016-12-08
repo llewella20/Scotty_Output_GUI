@@ -161,6 +161,9 @@ Window::Window(QWidget *parent)
     controlToSetRAM.moveTo(726, 490);
     controlToSetRAM.lineTo(726, 555);
     controlToSetRAM.lineTo(810, 555);
+    controlToSetRAM.moveTo(805, 550);
+    controlToSetRAM.lineTo(810, 555);
+    controlToSetRAM.lineTo(805, 560);
 
     QPainterPath controlToEnableRAM;
     controlToEnableRAM.moveTo(716, 490);
