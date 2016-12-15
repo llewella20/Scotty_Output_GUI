@@ -144,7 +144,7 @@ Window::Window(QWidget *parent)
     reg1enable.lineTo(572, 240);
     reg1enable.moveTo(567, 165);
     reg1enable.lineTo(572, 160);
-    reg1enable.lineTo(567, 165);
+    reg1enable.lineTo(577, 165);
 
     QPainterPath reg2set;
     reg2set.moveTo(599, 160);
@@ -155,22 +155,38 @@ Window::Window(QWidget *parent)
     QPainterPath reg2enable;
     reg2enable.moveTo(629, 160);
     reg2enable.lineTo(629, 240);
+    reg2enable.moveTo(624, 165);
+    reg2enable.lineTo(629, 160);
+    reg2enable.lineTo(634, 165);
 
     QPainterPath reg3set;
     reg3set.moveTo(656, 160);
     reg3set.lineTo(656, 240);
+    reg3set.moveTo(651, 165);
+    reg3set.moveTo(651, 165);
+    reg3set.lineTo(656, 160);
+    reg3set.lineTo(661, 165);
     QPainterPath reg3enable;
     reg3enable.moveTo(686, 160);
     reg3enable.lineTo(686, 240);
+    reg3enable.moveTo(681, 165);
+    reg3enable.lineTo(686, 160);
+    reg3enable.lineTo(691, 165);
 
     QPainterPath ALUtoACC;
     ALUtoACC.moveTo(135, 490);
     ALUtoACC.lineTo(135, 555);
+    ALUtoACC.moveTo(130, 550);
+    ALUtoACC.lineTo(135, 555);
+    ALUtoACC.lineTo(140, 550);
 
     QPainterPath controlToMAR;
     controlToMAR.moveTo(726, 240);
     controlToMAR.lineTo(726, 120);
     controlToMAR.lineTo(810, 120);
+    controlToMAR.moveTo(805, 115);
+    controlToMAR.lineTo(810, 120);
+    controlToMAR.lineTo(805, 125);
 
     QPainterPath controlToSetRAM;
     controlToSetRAM.moveTo(726, 490);
@@ -191,15 +207,24 @@ Window::Window(QWidget *parent)
     QPainterPath IARset;
     IARset.moveTo(502, 490);
     IARset.lineTo(502, 555);
+    IARset.moveTo(497, 550);
+    IARset.lineTo(502, 555);
+    IARset.lineTo(507, 550);
 
     QPainterPath IARenable;
     IARenable.moveTo(532, 490);
     IARenable.lineTo(532, 555);
+    IARenable.moveTo(527, 550);
+    IARenable.lineTo(532, 555);
+    IARenable.lineTo(537, 550);
 
     QPainterPath IRset;
     IRset.moveTo(648, 490);
     IRset.lineTo(648, 565);
     IRset.lineTo(638, 565);
+    IRset.moveTo(643, 560);
+    IRset.lineTo(638, 565);
+    IRset.lineTo(643, 570);
 
     QPainterPath IRtoControl;
     IRtoControl.moveTo(592, 555);
@@ -223,11 +248,17 @@ Window::Window(QWidget *parent)
     TMPset.moveTo(455, 240);
     TMPset.lineTo(455, 125);
     TMPset.lineTo(190, 125);
+    TMPset.moveTo(195, 120);
+    TMPset.lineTo(190, 125);
+    TMPset.lineTo(195, 130);
 
     QPainterPath controlToBus1;
     controlToBus1.moveTo(445, 240);
     controlToBus1.lineTo(445, 200);
     controlToBus1.lineTo(190, 200);
+    controlToBus1.moveTo(195, 195);
+    controlToBus1.lineTo(190, 200);
+    controlToBus1.lineTo(195, 205);
 
     QPainterPath opLines;
     opLines.moveTo(195, 280);
