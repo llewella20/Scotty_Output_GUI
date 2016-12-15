@@ -123,20 +123,35 @@ Window::Window(QWidget *parent)
     QPainterPath reg0set;
     reg0set.moveTo(485, 160);
     reg0set.lineTo(485, 240);
+    reg0set.moveTo(480, 165);
+    reg0set.lineTo(485, 160);
+    reg0set.lineTo(490, 165);
     QPainterPath reg0enable;
     reg0enable.moveTo(515, 160);
     reg0enable.lineTo(515, 240);
+    reg0enable.moveTo(510, 165);
+    reg0enable.lineTo(515, 160);
+    reg0enable.lineTo(520, 165);
 
     QPainterPath reg1set;
     reg1set.moveTo(542, 160);
     reg1set.lineTo(542, 240);
+    reg1set.moveTo(537, 165);
+    reg1set.lineTo(542, 160);
+    reg1set.lineTo(547, 165);
     QPainterPath reg1enable;
     reg1enable.moveTo(572, 160);
     reg1enable.lineTo(572, 240);
+    reg1enable.moveTo(567, 165);
+    reg1enable.lineTo(572, 160);
+    reg1enable.lineTo(567, 165);
 
     QPainterPath reg2set;
     reg2set.moveTo(599, 160);
     reg2set.lineTo(599, 240);
+    reg2set.moveTo(594, 165);
+    reg2set.lineTo(599, 160);
+    reg2set.lineTo(604, 165);
     QPainterPath reg2enable;
     reg2enable.moveTo(629, 160);
     reg2enable.lineTo(629, 240);
@@ -169,6 +184,9 @@ Window::Window(QWidget *parent)
     controlToEnableRAM.moveTo(716, 490);
     controlToEnableRAM.lineTo(716, 580);
     controlToEnableRAM.lineTo(810, 580);
+    controlToEnableRAM.moveTo(805, 575);
+    controlToEnableRAM.lineTo(810, 580);
+    controlToEnableRAM.lineTo(805, 585);
 
     QPainterPath IARset;
     IARset.moveTo(502, 490);
