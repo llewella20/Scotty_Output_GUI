@@ -23,6 +23,11 @@ Window::Window(QWidget *parent)
    // ALU.lineTo(180.0, 220.0);
    // ALU.lineTo(50.0, 220.0);
    // ALU.closeSubpath();
+    //ALU.addRoundedRect(QRectF(200, 240, 120, 250), 10, 10);
+
+    // voor enkel bovenste hoeken rounded:
+    // http://stackoverflow.com/questions/15288708/drawing-rectangle-with-only-2-corners-rounded-in-qt
+    // extra: http://stackoverflow.com/questions/29196610/qt-drawing-a-filled-rounded-rectangle-with-border
 
     QPainterPath controlSection;
     controlSection.addRect(425.0, 240.0, 321.0, 250.0);
