@@ -15,8 +15,10 @@ TEMPLATE = app
 SOURCES += main.cpp\
         window.cpp \
     renderarea.cpp \
-    renderline.cpp
+    renderline.cpp \
+    renderactive.cpp
 
 HEADERS  += window.h \
     renderarea.h \
-    renderline.h
+    renderline.h \
+    renderactive.h

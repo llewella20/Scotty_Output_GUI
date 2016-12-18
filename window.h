@@ -9,6 +9,7 @@
 
 class RenderArea;
 class RenderLine;
+class RenderActive;
 
 class Window : public QWidget
 {
@@ -27,6 +28,7 @@ private:
 
     QList<RenderArea*> renderAreas;
     QList<RenderLine*> renderLines;
+    QList<RenderActive*> renderActive;
     QLabel *penWidthLabel;
     QLabel *penColorLabel;
     QSpinBox *penWidthSpinBox;

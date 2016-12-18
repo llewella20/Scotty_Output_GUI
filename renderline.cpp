@@ -5,9 +5,10 @@
 RenderLine::RenderLine(const QPainterPath &path, QWidget *parent)
     :QWidget(parent), path(path)
 {
-    penWidth = 1;
+    //penWidth = 1;
     setBackgroundRole(QPalette::Base);
 }
+
 
 QSize RenderLine::minimumSizeHint() const
 {
@@ -19,19 +20,9 @@ QSize RenderLine::sizeHint() const
     return QSize(1020, 720);
 }
 
-//in-app variabelen aanpassen
-void RenderLine::setPenWidth(int width)
-{
-    penWidth = width;
-    update();
-}
-
-void RenderLine::setPenColor(const QColor &color)
-{
-    penColor = color;
-    update();
-}
-
+//
+// eventuele in-app variabelen komen hier (zie renderactive.cpp )
+//
 
 //actual painting
 void RenderLine::paintEvent(QPaintEvent *event)
@@ -43,7 +34,7 @@ void RenderLine::paintEvent(QPaintEvent *event)
     painter.translate(510.0, 360.0);
     painter.translate(-510.0, -360.0);
 
-    painter.setPen(QPen(penColor, penWidth, Qt::SolidLine, Qt::RoundCap, Qt::RoundJoin));
+    painter.setPen(QPen(QColor(0, 0, 0), 1, Qt::SolidLine, Qt::RoundCap, Qt::RoundJoin));
     painter.drawPath(path);
 
 }

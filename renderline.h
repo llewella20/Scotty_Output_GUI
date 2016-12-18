@@ -19,16 +19,13 @@ public:
     QSize sizeHint() const Q_DECL_OVERRIDE;
 
 public slots:
-    void setPenWidth(int width);
-    void setPenColor(const QColor &color);
+    // enkel nodig bij in-app aanpassingen (zie renderactive.h )
 
 protected:
     void paintEvent(QPaintEvent *event) Q_DECL_OVERRIDE;
 
 private:
     QPainterPath path;
-    int penWidth;
-    QColor penColor;
 
 };
 

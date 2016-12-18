@@ -1,6 +1,7 @@
 #include "window.h"
 #include "renderarea.h"
 #include "renderline.h"
+#include "renderactive.h"
 
 #include <QWidget>
 #include <cmath>
@@ -408,7 +409,7 @@ Window::Window(QWidget *parent)
     renderAreas.push_back(new RenderArea(flagZ));
     renderAreas.push_back(new RenderArea(flagSet));
     //lijntjes
-    renderLines.push_back(new RenderLine(busLine));
+    //renderLines.push_back(new RenderLine(busLine));
     renderLines.push_back(new RenderLine(TMPtoBus1));
     renderLines.push_back(new RenderLine(bus1ToALU));
     renderLines.push_back(new RenderLine(reg0set));
@@ -441,18 +442,20 @@ Window::Window(QWidget *parent)
     renderLines.push_back(new RenderLine(controlToFlagSet));
     renderLines.push_back(new RenderLine(ACCset));
     renderLines.push_back(new RenderLine(ACCenable));
-
+    //active
+    renderActive.push_back(new RenderActive(busLine));
+    renderActive.push_back(new RenderActive(ALU));
 
 
     penWidthSpinBox = new QSpinBox;
-    penWidthSpinBox->setRange(0, 20);
+    penWidthSpinBox->setRange(2, 20);
 
     penWidthLabel = new QLabel(tr("&Pen Width:"));
     penWidthLabel->setBuddy(penWidthSpinBox);
 
     penColorComboBox = new QComboBox;
     populateWithColors(penColorComboBox);
-    penColorComboBox->setCurrentIndex(penColorComboBox->findText("black"));
+    penColorComboBox->setCurrentIndex(penColorComboBox->findText("red"));
 
     penColorLabel = new QLabel(tr("Pen &Color:"));
     penColorLabel->setBuddy(penColorComboBox);
@@ -460,16 +463,12 @@ Window::Window(QWidget *parent)
     connect(penColorComboBox, SIGNAL(activated(int)), this, SLOT(penColorChanged()));
 
 
-    for(QList<RenderArea*>::iterator it = renderAreas.begin(); it != renderAreas.end(); it++)
+//  insert for loop for every in-app changeable class. [penWidth]
+    for(QList<RenderActive*>::iterator it = renderActive.begin(); it != renderActive.end(); it++)
     {
         connect(penWidthSpinBox, SIGNAL(valueChanged(int)), *it, SLOT(setPenWidth(int)));
     }
-
-    for(QList<RenderLine*>::iterator it = renderLines.begin(); it != renderLines.end(); it++)
-    {
-        connect(penWidthSpinBox, SIGNAL(valueChanged(int)), *it, SLOT(setPenWidth(int)));
-    }
-
+//  [penWidth]
 
     QGridLayout *topLayout = new QGridLayout;
 
@@ -482,11 +481,15 @@ Window::Window(QWidget *parent)
     {
         topLayout->addWidget(*it, 0, 1);
     }
+    for(QList<RenderActive*>::iterator it = renderActive.begin(); it != renderActive.end(); it++, i++)
+    {
+        topLayout->addWidget(*it, 0, 1);
+    }
 
     QGridLayout *mainLayout = new QGridLayout;
     mainLayout->addLayout(topLayout, 0, 0, 1, 4);
     mainLayout->addWidget(penWidthLabel, 1, 0);
-    mainLayout->addWidget(penWidthSpinBox, 1, 1, 1, 3);
+    mainLayout->addWidget(penWidthSpinBox, 1, 1, 1, 2);
     mainLayout->addWidget(penColorLabel, 2, 0);
     mainLayout->addWidget(penColorComboBox, 2, 1, 1, 3);
     //topLayout->setGeometry(QRect(QPoint(10, 10), QSize(40.0, 40.0)));
@@ -505,14 +508,12 @@ void Window::penColorChanged()
 {
     QColor color = qvariant_cast<QColor>(currentItemData(penColorComboBox));
 
-    for(QList<RenderArea*>::iterator it = renderAreas.begin(); it != renderAreas.end(); ++it)
+//  insert for loop for every in-app changeable class. [penColor]
+    for(QList<RenderActive*>::iterator it = renderActive.begin(); it != renderActive.end(); ++it)
     {
         (*it)->setPenColor(color);
     }
-    for(QList<RenderLine*>::iterator it = renderLines.begin(); it != renderLines.end(); ++it)
-    {
-        (*it)->setPenColor(color);
-    }
+//  [penColor]
 }
 
 void Window::populateWithColors(QComboBox *comboBox)
