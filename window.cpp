@@ -229,20 +229,51 @@ Window::Window(QWidget *parent)
     QPainterPath IRtoControl;
     IRtoControl.moveTo(592, 555);
     IRtoControl.lineTo(592, 490);
+    IRtoControl.moveTo(590, 495);
+    IRtoControl.lineTo(592, 490);
+    IRtoControl.lineTo(594, 495);
+
     IRtoControl.moveTo(598, 555);
     IRtoControl.lineTo(598, 490);
+    IRtoControl.moveTo(596, 495);
+    IRtoControl.lineTo(598, 490);
+    IRtoControl.lineTo(600, 495);
+
     IRtoControl.moveTo(604, 555);
     IRtoControl.lineTo(604, 490);
+    IRtoControl.moveTo(602, 495);
+    IRtoControl.lineTo(604, 490);
+    IRtoControl.lineTo(606, 495);
+
     IRtoControl.moveTo(610, 555);
     IRtoControl.lineTo(610, 490);
+    IRtoControl.moveTo(608, 495);
+    IRtoControl.lineTo(610, 490);
+    IRtoControl.lineTo(612, 495);
+
     IRtoControl.moveTo(616, 555);
     IRtoControl.lineTo(616, 490);
+    IRtoControl.moveTo(614, 495);
+    IRtoControl.lineTo(616, 490);
+    IRtoControl.lineTo(618, 495);
+
     IRtoControl.moveTo(622, 555);
     IRtoControl.lineTo(622, 490);
+    IRtoControl.moveTo(620, 495);
+    IRtoControl.lineTo(622, 490);
+    IRtoControl.lineTo(624, 495);
+
     IRtoControl.moveTo(628, 555);
     IRtoControl.lineTo(628, 490);
+    IRtoControl.moveTo(626, 495);
+    IRtoControl.lineTo(628, 490);
+    IRtoControl.lineTo(630, 495);
+
     IRtoControl.moveTo(634, 555);
     IRtoControl.lineTo(634, 490);
+    IRtoControl.moveTo(632, 495);
+    IRtoControl.lineTo(634, 490);
+    IRtoControl.lineTo(636, 495);
 
     QPainterPath TMPset;
     TMPset.moveTo(455, 240);
@@ -263,23 +294,44 @@ Window::Window(QWidget *parent)
     QPainterPath opLines;
     opLines.moveTo(195, 280);
     opLines.lineTo(425, 280);
+    opLines.moveTo(200, 277);
+    opLines.lineTo(195, 280);
+    opLines.lineTo(200, 283);
     opLines.moveTo(195, 290);
     opLines.lineTo(425, 290);
+    opLines.moveTo(200, 287);
+    opLines.lineTo(195, 290);
+    opLines.lineTo(200, 293);
     opLines.moveTo(195, 300);
     opLines.lineTo(425, 300);
+    opLines.moveTo(200, 297);
+    opLines.lineTo(195, 300);
+    opLines.lineTo(200, 303);
 
     QPainterPath carryOut;
     carryOut.moveTo(195, 380);
     carryOut.lineTo(285, 380);
+    carryOut.moveTo(280, 375);
+    carryOut.lineTo(285, 380);
+    carryOut.lineTo(280, 385);
     QPainterPath aLarger;
     aLarger.moveTo(195, 410);
     aLarger.lineTo(285, 410);
+    aLarger.moveTo(280, 405);
+    aLarger.lineTo(285, 410);
+    aLarger.lineTo(280, 415);
     QPainterPath equalLine;
     equalLine.moveTo(195, 440);
     equalLine.lineTo(285, 440);
+    equalLine.moveTo(280, 435);
+    equalLine.lineTo(285, 440);
+    equalLine.lineTo(280, 445);
     QPainterPath zeroLine;
     zeroLine.moveTo(195, 470);
     zeroLine.lineTo(285, 470);
+    zeroLine.moveTo(280, 465);
+    zeroLine.lineTo(285, 470);
+    zeroLine.lineTo(280, 475);
 
     QPainterPath carryIn;
     carryIn.moveTo(335, 380);
@@ -287,29 +339,53 @@ Window::Window(QWidget *parent)
     carryIn.moveTo(380, 380);
     carryIn.lineTo(380, 330);
     carryIn.lineTo(195, 330);
+    carryIn.moveTo(420, 375);
+    carryIn.lineTo(425, 380);
+    carryIn.lineTo(420, 385);
+    carryIn.moveTo(200, 325);
+    carryIn.lineTo(195, 330);
+    carryIn.lineTo(200, 335);
     QPainterPath aLargertoControl;
     aLargertoControl.moveTo(335, 410);
     aLargertoControl.lineTo(425, 410);
+    aLargertoControl.moveTo(420, 405);
+    aLargertoControl.lineTo(425, 410);
+    aLargertoControl.lineTo(420, 415);
     QPainterPath equalToControl;
     equalToControl.moveTo(335, 440);
     equalToControl.lineTo(425, 440);
+    equalToControl.moveTo(420, 435);
+    equalToControl.lineTo(425, 440);
+    equalToControl.lineTo(420, 445);
     QPainterPath zeroToControl;
     zeroToControl.moveTo(335, 470);
     zeroToControl.lineTo(425, 470);
+    zeroToControl.moveTo(420, 465);
+    zeroToControl.lineTo(425, 470);
+    zeroToControl.lineTo(420, 475);
 
     QPainterPath controlToFlagSet;
     controlToFlagSet.moveTo(445, 490);
     controlToFlagSet.lineTo(445, 530);
     controlToFlagSet.lineTo(335, 530);
+    controlToFlagSet.moveTo(340, 525);
+    controlToFlagSet.lineTo(335, 530);
+    controlToFlagSet.lineTo(340, 535);
 
     QPainterPath ACCset;
     ACCset.moveTo(455, 490);
     ACCset.lineTo(455, 565);
     ACCset.lineTo(160, 565);
+    ACCset.moveTo(165, 560);
+    ACCset.lineTo(160, 565);
+    ACCset.lineTo(165, 570);
     QPainterPath ACCenable;
     ACCenable.moveTo(465, 490);
     ACCenable.lineTo(465, 595);
     ACCenable.lineTo(160, 595);
+    ACCenable.moveTo(165, 590);
+    ACCenable.lineTo(160, 595);
+    ACCenable.lineTo(165, 600);
 
 
     renderAreas.push_back(new RenderArea(ALU));
