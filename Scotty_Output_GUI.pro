@@ -16,9 +16,11 @@ SOURCES += main.cpp\
         window.cpp \
     renderarea.cpp \
     renderline.cpp \
-    renderactive.cpp
+    renderactive.cpp \
+    rendertext.cpp
 
 HEADERS  += window.h \
     renderarea.h \
     renderline.h \
-    renderactive.h
+    renderactive.h \
+    rendertext.h

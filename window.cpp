@@ -2,6 +2,7 @@
 #include "renderarea.h"
 #include "renderline.h"
 #include "renderactive.h"
+#include "rendertext.h"
 
 #include <QWidget>
 #include <cmath>
@@ -76,11 +77,42 @@ Window::Window(QWidget *parent)
     QPainterPath flagSet;
     flagSet.addRect(285, 485, 50, 60);
 
+//begin text
+
+    QFont timesFont("Segoe UI", 15);
+    timesFont.setStyleStrategy(QFont::ForceOutline);
+
+    QPainterPath txtALU;
+    txtALU.addText(115, 360, timesFont, tr("ALU"));
+
+    QPainterPath txtControl;
+    txtControl.addText(520, 360, timesFont, tr("Control Section"));
+
+    QPainterPath txtRAM;
+    txtRAM.addText(855, 360, timesFont, tr("RAM"));
+
+    QPainterPath txtMAR;
+    txtMAR.addText(855, 95, timesFont, tr("MAR"));
+
+    QPainterPath txtReg0;
+    txtReg0.addText(487, 135, timesFont, tr("R0"));
+    QPainterPath txtReg1;
+    txtReg1.addText(544, 135, timesFont, tr("R1"));
+    QPainterPath txtReg2;
+    txtReg2.addText(601, 135, timesFont, tr("R2"));
+    QPainterPath txtReg3;
+    txtReg3.addText(658, 135, timesFont, tr("R3"));
+
+    QPainterPath txtTMP;
+    txtTMP.addText(147, 152, timesFont, tr("TMP"));
+
+    QPainterPath txtBus1;
+    txtBus1.addText(142, 207, timesFont, tr("bus 1"));
 
 
 
     QPainterPath textPath;
-    QFont timesFont("Times", 12);
+    //QFont timesFont("Times", 12);
     timesFont.setStyleStrategy(QFont::ForceOutline);
     textPath.addText(10, 70, timesFont, tr("Shtef"));
 
@@ -396,6 +428,7 @@ Window::Window(QWidget *parent)
 
     renderAreas.push_back(new RenderArea(ALU));
     //renderAreas.push_back(new RenderArea(textPath));
+    //renderAreas.push_back(new RenderArea(txtALU));
     renderAreas.push_back(new RenderArea(controlSection));
     renderAreas.push_back(new RenderArea(RAM));
     renderAreas.push_back(new RenderArea(MAR));
@@ -447,6 +480,18 @@ Window::Window(QWidget *parent)
     renderLines.push_back(new RenderLine(controlToFlagSet));
     renderLines.push_back(new RenderLine(ACCset));
     renderLines.push_back(new RenderLine(ACCenable));
+    //text
+    renderText.push_back(new RenderText(txtALU));
+    renderText.push_back(new RenderText(txtControl));
+    renderText.push_back(new RenderText(txtRAM));
+    renderText.push_back(new RenderText(txtMAR));
+    renderText.push_back(new RenderText(txtReg0));
+    renderText.push_back(new RenderText(txtReg1));
+    renderText.push_back(new RenderText(txtReg2));
+    renderText.push_back(new RenderText(txtReg3));
+    renderText.push_back(new RenderText(txtTMP));
+    renderText.push_back(new RenderText(txtBus1));
+
     //active
     renderActive.push_back(new RenderActive(busLine));
     renderActive.push_back(new RenderActive(ALU));
@@ -490,6 +535,10 @@ Window::Window(QWidget *parent)
     {
         topLayout->addWidget(*it, 0, 1);
     }
+    for(QList<RenderText*>::iterator it = renderText.begin(); it != renderText.end(); it++, i++)
+    {
+        topLayout->addWidget(*it, 0, 1);
+    }
 
     QGridLayout *mainLayout = new QGridLayout;
     mainLayout->addLayout(topLayout, 0, 0, 1, 4);
@@ -502,8 +551,8 @@ Window::Window(QWidget *parent)
 
     penWidthSpinBox->setValue(2);
 
-    label = new QLabel("de ALU natuurlijk", this);
-    label->setGeometry(QRect(QPoint(70, 200), QSize(500, 20)));
+    //label = new QLabel("de ALU natuurlijk", this);
+    //label->setGeometry(QRect(QPoint(70, 200), QSize(500, 20)));
 
     setWindowTitle(tr("Scotty Processor"));
 

@@ -48,6 +48,7 @@ void RenderActive::paintEvent(QPaintEvent *event)
     painter.translate(-510.0, -360.0);      //daarom deze ook niet?
 
     painter.setPen(QPen(penColor, penWidth, Qt::SolidLine, Qt::RoundCap, Qt::RoundJoin));
+    painter.setBrush(Qt::NoBrush);
     painter.drawPath(path);
 
 }
