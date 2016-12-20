@@ -1,19 +1,15 @@
-#ifndef RENDERLINE_H
-#define RENDERLINE_H
+#ifndef RENDERTEXT_H
+#define RENDERTEXT_H
 
 #include <QPainterPath>
 #include <QWidget>
 
-//zowel deze als renderarea kunnen met overerving werken van een baseclass
-//maar ik probeer het even zo
-
-
-class RenderLine: public QWidget
+class RenderText: public QWidget
 {
     Q_OBJECT
 
 public:
-    explicit RenderLine(const QPainterPath &path, QWidget *parent = 0);
+    explicit RenderText(const QPainterPath &path, QWidget *parent = 0);
 
     QSize minimumSizeHint() const Q_DECL_OVERRIDE;
     QSize sizeHint() const Q_DECL_OVERRIDE;
@@ -29,4 +25,4 @@ private:
 
 };
 
-#endif // RENDERLINE_H
+#endif // RENDERTEXT_H

@@ -1,21 +1,20 @@
-#include "renderarea.h"
+#include "rendertext.h"
 
 #include <QPainter>
 
-RenderArea::RenderArea(const QPainterPath &path, QWidget *parent)
-    : QWidget(parent), path(path)
+RenderText::RenderText(const QPainterPath &path, QWidget *parent)
+    :QWidget(parent), path(path)
 {
-    //penWidth = 1;
     setBackgroundRole(QPalette::Base);
 }
 
 //voor grootte window
-QSize RenderArea::minimumSizeHint() const
+QSize RenderText::minimumSizeHint() const
 {
     return QSize(510, 360);
 }
 
-QSize RenderArea::sizeHint() const
+QSize RenderText::sizeHint() const
 {
     return QSize(1020, 720);
 }
@@ -25,7 +24,7 @@ QSize RenderArea::sizeHint() const
 //
 
 //actual painting
-void RenderArea::paintEvent(QPaintEvent *event)
+void RenderText::paintEvent(QPaintEvent *event)
 {
     QPainter painter(this);
     painter.setRenderHint(QPainter::Antialiasing);
@@ -35,8 +34,7 @@ void RenderArea::paintEvent(QPaintEvent *event)
     painter.translate(-510.0, -360.0);
 
     painter.setPen(QPen(QColor(0,0,0), 1, Qt::SolidLine, Qt::RoundCap, Qt::RoundJoin));
-    painter.setBrush(QBrush(QColor(192, 192, 192))); //set color of shape
+    painter.setBrush(QBrush(QColor(0, 0, 0))); //set color of shape
     painter.drawPath(path);
-
 
 }
